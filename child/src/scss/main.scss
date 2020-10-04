@@ -1,0 +1,25 @@
+// @import "reset";
+// @import "breakpoint-sass";
+// @import "breakpoint-slicer";
+// $slicer-breakpoints: 0 400px 800px 1200px 1440px;
+
+$bg: #fff;
+$txt: #000;
+$accent: #007cf9;
+$cta: #007cf9;
+.iframe-embedded {
+  > *:not(.main),
+  .content .left,
+  .mobile-title,
+  .desktop-title,
+  .tabs {
+    display: none !important;
+  }
+  .webform-client-form {
+    float: none;
+    width: 100%;
+  }
+  .step-group.active {
+    display: block !important;
+  }
+}
