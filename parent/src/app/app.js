@@ -3,10 +3,13 @@ export const run = () => {
   if (!("modal_options" in window)) {
     window.modal_options = {};
   }
-  const ifawIframe = new Shortcode(document.querySelector("body"), {
-    iframe: function() {
-      return `<iframe loading='lazy' id='ifaw-iframe' width='100%' scrolling='no' class='ifaw-iframe' src='${this.options.url}' frameborder='0' allowfullscreen></iframe>`;
-    },
+  document.querySelectorAll("main > div p").forEach((el) => {
+    // console.log(el);
+    let ifawIframe = new Shortcode(el, {
+      iframe: function() {
+        return `<iframe loading='lazy' id='ifaw-iframe' width='100%' scrolling='no' class='ifaw-iframe' src='${this.options.url}' frameborder='0' allowfullscreen></iframe>`;
+      },
+    });
   });
 
   // Scrolling Code
