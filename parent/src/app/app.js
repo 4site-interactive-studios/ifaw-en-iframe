@@ -1,4 +1,4 @@
-import { Shortcode } from "./utils/shortcodde";
+import { Shortcode } from "./utils/shortcode";
 export const run = () => {
   if (!("modal_options" in window)) {
     window.modal_options = {};
