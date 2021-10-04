@@ -3,12 +3,17 @@ export const run = () => {
   if (!("modal_options" in window)) {
     window.modal_options = {};
   }
+
   document.querySelectorAll("main > div p").forEach((el) => {
     // console.log(el);
     let ifawIframe = new Shortcode(el, {
       iframe: function() {
-        return `<iframe loading='lazy' id='ifaw-iframe' width='100%' scrolling='no' class='ifaw-iframe' src='${this.options.url}' frameborder='0' allowfullscreen></iframe>`;
-      },
+        var iframe_classes = 'ifaw-iframe';
+        if(this.options.url.indexOf('secure.ifaw.org') !== -1) {
+          iframe_classes += ' springboard';
+        }
+        return `<iframe loading='lazy' id='ifaw-iframe' width='100%' scrolling='no' class='${iframe_classes}' src='${this.options.url}' frameborder='0' allowfullscreen></iframe>`;
+      }
     });
   });
 

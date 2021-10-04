@@ -10,8 +10,11 @@ $cta: #007cf9;
 
 .ifaw-iframe {
   min-height: 200px;
-  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+.ifaw-iframe.springboard {
+  max-width: 500px;
 }
